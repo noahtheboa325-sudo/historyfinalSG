@@ -316,7 +316,7 @@ export default function StudyApp() {
     flashWrap: { perspective: "1000px", cursor: "pointer" },
     flashCard: (f) => ({
       background: colors.card,
-      border: `1px solid ${colors.border}`,
+      border: `"1px solid ${colors.border}",
       borderRadius: "18px",
       padding: "40px 32px",
       minHeight: "220px",
