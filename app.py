@@ -451,7 +451,7 @@ export default function StudyApp() {
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%" }}>
                   <div style={{ fontSize: "11px", color: colors.muted, textTransform: "uppercase", letterSpacing: "0.1em" }}>Term</div>
                   <div style={styles.flashTerm}>{card.term}</div>
-                  <div style={styles.flashHint}>Tap to see definition →</div>
+                  <div style={styles.flashHint}>Tap to see definition '→'</div>
                 </div>
               )}
               {flipped && (
