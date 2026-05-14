@@ -437,7 +437,7 @@ export default function StudyApp() {
     return (
       <div style={styles.app}>
         <div style={styles.header}>
-          <button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button>
+          <button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button>
           <span style={styles.progress}>{cardIndex + 1} / {deck.length}</span>
         </div>
         <div style={styles.body}>
