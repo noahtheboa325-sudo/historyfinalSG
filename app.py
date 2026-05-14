@@ -286,7 +286,7 @@ export default function StudyApp() {
 
   const styles = {
     app: { minHeight: "100vh", background: colors.bg, color: colors.text, fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif", padding: "0" },
-    header: { background: colors.card, borderBottom: `1px solid ${colors.border}`, padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" },
+    header: { background: colors.card, borderBottom: "1px solid ${colors.border}", padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" },
     logo: { fontSize: "18px", fontWeight: "700", letterSpacing: "0.04em", color: colors.accent },
     tag: { fontSize: "11px", background: colors.border, color: colors.muted, padding: "2px 10px", borderRadius: "99px", marginLeft: "10px", fontWeight: "500" },
     body: { maxWidth: "780px", margin: "0 auto", padding: "32px 16px" },
