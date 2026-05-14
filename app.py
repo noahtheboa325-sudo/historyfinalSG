@@ -463,7 +463,7 @@ export default function StudyApp() {
             </div>
           </div>
           <div style={styles.navRow}>
-            <button style={styles.btn("ghost")} onClick={() => { setCardIndex(Math.max(0, cardIndex - 1)); setFlipped(false); }} disabled={cardIndex === 0}>← Prev</button>
+            <button style={styles.btn("ghost")} onClick={() => { setCardIndex(Math.max(0, cardIndex - 1)); setFlipped(false); }} disabled={cardIndex === 0}>'←' Prev</button>
             <button style={styles.btn("primary")} onClick={() => { if (cardIndex < deck.length - 1) { setCardIndex(cardIndex + 1); setFlipped(false); } else setMode("menu"); }}>
               {cardIndex < deck.length - 1 ? "Next →" : "Finish ✓"}
             </button>
@@ -479,7 +479,7 @@ export default function StudyApp() {
   if (mode === "quiz") {
     if (quizDone) return (
       <div style={styles.app}>
-        <div style={styles.header}><button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button></div>
+        <div style={styles.header}><button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button></div>
         <div style={styles.body}>
           <div style={styles.scoreBox}>
             <div style={{ fontSize: "14px", color: colors.muted, marginBottom: "8px" }}>Quiz Complete!</div>
@@ -496,7 +496,7 @@ export default function StudyApp() {
     return (
       <div style={styles.app}>
         <div style={styles.header}>
-          <button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button>
+          <button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button>
           <span style={styles.progress}>{quizQ.idx + 1} / {deck.length}</span>
         </div>
         <div style={styles.body}>
@@ -536,14 +536,14 @@ export default function StudyApp() {
     return (
       <div style={styles.app}>
         <div style={styles.header}>
-          <button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button>
+          <button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button>
           <span style={styles.progress}>{matchSolved.length / 2} / 6 matched</span>
         </div>
         <div style={styles.body}>
           <div style={{ marginBottom: "16px", fontWeight: "700" }}>Match the Terms</div>
           {matchDone ? (
             <div style={styles.scoreBox}>
-              <div style={{ fontSize: "28px", marginBottom: "8px" }}>🎉</div>
+              <div style={{ fontSize: "28px", marginBottom: "8px" }}>'🎉'</div>
               <div style={{ fontSize: "20px", fontWeight: "700", marginBottom: "16px" }}>All matched!</div>
               <button style={styles.btn("primary")} onClick={startMatch}>Play Again</button>
             </div>
