@@ -304,7 +304,7 @@ export default function StudyApp() {
     btn: (variant = "primary") => ({
       background: variant === "primary" ? colors.accent : variant === "success" ? colors.success : colors.card,
       color: "#fff",
-      border: `1px solid ${variant === "primary" ? colors.accent : variant === "success" ? colors.success : colors.border}`,
+      border: "1px solid ${variant === "primary" ? colors.accent : variant === "success" ? colors.success : colors.border}",
       borderRadius: "10px",
       padding: "10px 22px",
       fontSize: "14px",
