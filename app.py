@@ -336,7 +336,7 @@ export default function StudyApp() {
     flashBack: { backfaceVisibility: "hidden", transform: "rotateY(180deg)", position: "absolute", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px" },
     flashDef: { fontSize: "15px", lineHeight: "1.65", color: colors.text },
     navRow: { display: "flex", alignItems: "center", gap: "12px", marginTop: "20px", justifyContent: "center" },
-    quizCard: { background: colors.card, border: `1px solid ${colors.border}`, borderRadius: "16px", padding: "28px 24px", marginBottom: "20px" },
+    quizCard: { background: colors.card, border: `"1px solid ${colors.border}", borderRadius: "16px", padding: "28px 24px", marginBottom: "20px" },
     quizQ: { fontSize: "17px", fontWeight: "600", marginBottom: "20px", lineHeight: "1.5" },
     quizOpts: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" },
     quizOpt: (state) => ({
