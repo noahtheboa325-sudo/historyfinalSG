@@ -286,7 +286,7 @@ export default function StudyApp() {
 
   const styles = {
     app: { minHeight: "100vh", background: colors.bg, color: colors.text, fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif", padding: "0" },
-    header: { background: colors.card, borderBottom: "1px solid ${colors.border}", padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" },
+    header: { background: colors.card, borderBottom: '1px solid ${colors.border}', padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" },
     logo: { fontSize: "18px", fontWeight: "700", letterSpacing: "0.04em", color: colors.accent },
     tag: { fontSize: "11px", background: colors.border, color: colors.muted, padding: "2px 10px", borderRadius: "99px", marginLeft: "10px", fontWeight: "500" },
     body: { maxWidth: "780px", margin: "0 auto", padding: "32px 16px" },
@@ -296,7 +296,7 @@ export default function StudyApp() {
     unitSelect: { marginBottom: "24px" },
     unitLabel: { fontSize: "12px", color: colors.muted, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" },
     unitBtns: { display: "flex", flexWrap: "wrap", gap: "8px" },
-    unitBtn: (active) => ({ background: active ? colors.accent : colors.card, color: active ? "#fff" : colors.muted, border: `"1px solid ${active ? colors.accent : colors.border}", borderRadius: "8px", padding: "6px 14px", fontSize: "13px", cursor: "pointer", fontWeight: active ? "600" : "400", transition: "all 0.15s" }),
+    unitBtn: (active) => ({background: active ? colors.accent : colors.card,color: active ? "#fff" : colors.muted,border: `1px solid ${active ? colors.accent : colors.border}`,borderRadius: "8px",padding: "6px 14px",fontSize: "13px", cursor: "pointer",fontWeight: active ? "600" : "400",transition: "all 0.15s",})
     modeCard: { background: colors.card, border: `"1px solid ${colors.border}`", borderRadius: "14px", padding: "24px", cursor: "pointer", transition: "border-color 0.15s, transform 0.15s" },
     modeIcon: { fontSize: "28px", marginBottom: "10px" },
     modeTitle: { fontSize: "17px", fontWeight: "700", marginBottom: "4px" },
