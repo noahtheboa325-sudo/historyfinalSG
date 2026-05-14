@@ -408,7 +408,7 @@ export default function StudyApp() {
             <div style={styles.modeCard} onClick={startFlashcard}
               onMouseEnter={e => { e.currentTarget.style.borderColor = colors.accent; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = ""; }}>
-              <div style={styles.modeIcon}>🃏</div>
+              <div style={styles.modeIcon}>'🃏'</div>
               <div style={styles.modeTitle}>Flashcards</div>
               <div style={styles.modeDesc}>Flip through all terms and definitions</div>
             </div>
