@@ -89,7 +89,7 @@ html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
 # ── Data ───────────────────────────────────────────────────────────────────────
 ALL_TERMS = [
     # Enlightenment
-    {"term": "Scientific Revolution → Enlightenment", "def": "The Scientific Revolution showed that reason and observation could uncover natural laws. This inspired Enlightenment thinkers to apply the same logical thinking to society, government, and human rights."},
+    {"term": "How does the Scientific Revolution lead to the Enlightenment?", "def": "The Scientific Revolution proved that reason and observation could uncover natural laws governing the physical world. This inspired Enlightenment thinkers to apply the same logical, rational approach to human society, government, religion, and individual rights — arguing that just as nature follows discoverable laws, so too should civilization."},
     {"term": "Natural Laws", "def": "Rules believed to govern human society and behavior, just like laws govern nature. Enlightenment thinkers argued governments should be based on these universal principles."},
     {"term": "Social Contract", "def": "The idea that people give up some freedoms to a government in exchange for protection of their remaining rights. If the government breaks this agreement, people can revolt."},
     {"term": "Hobbes", "def": "English philosopher who believed humans were naturally selfish and violent. He argued people needed a strong, authoritarian ruler to keep order — his book was called Leviathan."},
@@ -117,21 +117,22 @@ ALL_TERMS = [
     {"term": "Tennis Court Oath", "def": "A pledge taken in 1789 by members of the Third Estate, who locked out of their meeting hall, swore not to disband until France had a new constitution."},
     {"term": "Storming of the Bastille", "def": "On July 14, 1789, Parisian crowds stormed the Bastille prison, a symbol of royal tyranny. It marked the beginning of the violent phase of the French Revolution."},
     {"term": "The Great Fear", "def": "A wave of panic and violence that swept the French countryside in summer 1789. Peasants attacked nobles' estates, fearing an aristocratic conspiracy against them."},
-    {"term": "Social Divisions & the Revolution", "def": "France's three estates were deeply unequal. The First (clergy) and Second (nobility) Estates held privileges and paid little tax, while the Third Estate (97% of the population) bore the burden — this resentment fueled revolution."},
+    {"term": "How did France's social divisions contribute to the Revolution?", "def": "France's three estates were deeply unequal. The First (clergy) and Second (nobility) Estates held privileges and paid little tax, while the Third Estate (97% of the population) bore the burden. This resentment, combined with food shortages and a financial crisis, created explosive anger that fueled the Revolution."},
     {"term": "Reign of Terror", "def": "A phase of the French Revolution (1793–1794) where the radical government executed thousands of perceived enemies of the Revolution, often without fair trials."},
     {"term": "Maximilien Robespierre", "def": "Leader of the Committee of Public Safety who directed the Reign of Terror. He believed extreme violence was necessary to protect the Revolution. Eventually he too was arrested and guillotined."},
     {"term": "Guillotine", "def": "A device used to behead people quickly, used extensively during the Reign of Terror. It became a symbol of Revolutionary violence."},
-    {"term": "Why the Terror Was Allowed", "def": "France was threatened by foreign invasion and internal rebellion. The Committee convinced the public that harsh measures were necessary to save the Revolution — fear of enemies made people accept the violence."},
+    {"term": "Why was the Committee of Public Safety allowed to terrorize France?", "def": "France was simultaneously threatened by foreign invasion and internal counter-revolutionary rebellion. The Committee convinced a frightened public that extreme measures were necessary to save the Revolution. Fear of enemies — both foreign armies and traitors within — made citizens accept and even support the violence, at least temporarily."},
     {"term": "Napoleon", "def": "French military general who rose to power after the French Revolution and became Emperor. He conquered much of Europe and spread Enlightenment legal ideas but also built an authoritarian empire."},
-    {"term": "Napoleon's Rise", "def": "The chaos of the Revolution left France unstable and desperate for strong leadership. Napoleon's military victories made him a hero. He staged a coup in 1799 and took control of the government."},
+    {"term": "How did the turmoil of France lead to Napoleon's rise to power?", "def": "Years of revolutionary chaos, political instability, and foreign war left France desperate for strong, effective leadership. Napoleon's brilliant military victories made him a national hero. When the Directory government proved weak and corrupt, Napoleon staged a coup in 1799 (18 Brumaire), presenting himself as the man who could restore order and glory to France."},
     {"term": "Napoleonic Code", "def": "A unified legal code Napoleon established in France. It guaranteed equality before the law, property rights, and religious tolerance — but also restricted women's rights."},
+    {"term": "Reforms", "def": "Napoleon introduced sweeping reforms across Europe: modernizing legal systems with the Napoleonic Code, reorganizing education, creating the Bank of France, and establishing meritocracy in government and the military. These reforms spread Enlightenment ideals of equality and rationalism, even as Napoleon ruled as an authoritarian emperor."},
     {"term": "Concert of Europe", "def": "An agreement among European powers after Napoleon's defeat to maintain the balance of power and prevent future revolutions or wars. It was established at the Congress of Vienna (1815)."},
     # Industrial Revolution
     {"term": "Entrepreneur", "def": "A person who starts and runs a business, taking on financial risk for potential profit. Entrepreneurs were key figures driving the Industrial Revolution."},
     {"term": "Capitalism", "def": "An economic system where private individuals own businesses and compete in a free market. Profit motive drives production."},
     {"term": "Capital", "def": "Money or resources invested in a business to produce goods or services."},
     {"term": "Industrial Revolution", "def": "A period of massive economic and social change (starting in Britain ~1760s) when production shifted from hand tools in homes to machines in factories."},
-    {"term": "Great Britain (Industrial Rev.)", "def": "The first country to industrialize due to its coal and iron resources, strong navy and trade, stable government, and colonies providing raw materials."},
+    {"term": "Great Britain", "def": "The first country to industrialize, due to its abundant coal and iron resources, strong navy and global trade networks, stable government, and colonies providing raw materials and markets. Its geography (no point more than 70 miles from water) also made transporting goods easy."},
     {"term": "Luddites", "def": "British workers in the early 1800s who destroyed factory machines out of fear that machinery was taking their jobs. The term now means someone who opposes new technology."},
     {"term": "Urbanization", "def": "The growth of cities as people moved from rural areas to find factory work. It led to overcrowded, often unsanitary living conditions."},
     {"term": "Standard of Living", "def": "The level of comfort and wealth available to a person or group. The Industrial Revolution raised it long-term but initially caused miserable conditions for factory workers."},
@@ -160,7 +161,7 @@ ALL_TERMS = [
     {"term": "Berlin Conference", "def": "A meeting of European powers (1884–1885) to divide Africa among themselves. African nations had no representation. It formalized the 'Scramble for Africa.'"},
     {"term": "King Leopold II", "def": "Belgian king who personally colonized the Congo, exploiting it for rubber and ivory while terrorizing its people. His rule caused millions of deaths and became a symbol of colonial brutality."},
     # WWI
-    {"term": "Causes of WWI (MAIN)", "def": "Militarism, Alliance systems, Imperialism, and Nationalism. The assassination of Archduke Franz Ferdinand in 1914 was the spark that set off these underlying tensions."},
+    {"term": "Causes of WWI", "def": "The main causes are remembered as MAIN: Militarism (arms race among European powers), Alliance systems (Triple Entente vs. Triple Alliance), Imperialism (competition for colonies), and Nationalism (ethnic tensions, especially in the Balkans). The assassination of Archduke Franz Ferdinand in 1914 was the spark that ignited these underlying tensions into full-scale war."},
     {"term": "Entente", "def": "The alliance between France, Russia, and Britain (the Triple Entente). It became the core of the Allied Powers in WWI."},
     {"term": "Militarism", "def": "The glorification of military power and the aggressive buildup of armed forces. European nations competed to have the largest, most powerful militaries before WWI."},
     {"term": "Alsace and Lorraine", "def": "Two regions on the French-German border seized by Germany after the Franco-Prussian War (1871). France wanted them back, fueling tension before WWI."},
@@ -204,6 +205,7 @@ ALL_TERMS = [
     {"term": "Benito Mussolini", "def": "Fascist dictator of Italy who allied with Hitler. He promised to restore Roman-era greatness and used violence (the Black Shirts) to seize power."},
     {"term": "Black Shirts", "def": "Mussolini's paramilitary force that used violence and intimidation to crush political opposition and help him seize power in Italy in the 1920s."},
     {"term": "Fascism", "def": "An authoritarian, ultranationalist political ideology that glorifies the state and leader, suppresses opposition, and often relies on violence. Practiced by Mussolini and Hitler."},
+    {"term": "Italy (WWII)", "def": "Under Mussolini, Italy allied with Nazi Germany and Japan as part of the Axis Powers. Italy invaded Ethiopia and Albania before WWII, then fought alongside Germany in North Africa and Europe. Italy switched sides to the Allies in 1943 after Mussolini was overthrown."},
     {"term": "Hideki Tojo", "def": "Japanese military leader and Prime Minister during WWII who oversaw Japanese expansion in Asia and the attack on Pearl Harbor. He was executed as a war criminal after the war."},
     {"term": "Japan (WWII)", "def": "Sought to build a Pacific empire. Invaded China and Southeast Asia, attacked Pearl Harbor in 1941, and committed atrocities like the Bataan Death March."},
     {"term": "Winston Churchill", "def": "British Prime Minister during WWII. His leadership and speeches helped Britain resist Nazi Germany during the Blitz. He refused to negotiate with Hitler."},
@@ -242,314 +244,57 @@ ALL_TERMS = [
 
 UNITS = {
     "All Terms": None,
-    "Enlightenment": ["Scientific Revolution → Enlightenment","Natural Laws","Social Contract","Hobbes","Locke","Philosophe","Voltaire","Montesquieu","Diderot","Rousseau","Mary Wollstonecraft","Adam Smith","Laissez Faire","Censorship"],
-    "American & French Revolution": ["American Revolution","Thomas Jefferson","Declaration of Independence","French Revolution","Louis XVI","Jacques Necker","Marquis de Lafayette","Estates General","Ancien Régime","Deficit Spending","Tennis Court Oath","Storming of the Bastille","The Great Fear","Social Divisions & the Revolution","Reign of Terror","Maximilien Robespierre","Guillotine","Why the Terror Was Allowed","Napoleon","Napoleon's Rise","Napoleonic Code","Concert of Europe"],
-    "Industrial Revolution": ["Entrepreneur","Capitalism","Capital","Industrial Revolution","Great Britain (Industrial Rev.)","Luddites","Urbanization","Standard of Living","Communism","Socialism","Tenements","Karl Marx","Textiles","Stocks","Germ Theory"],
-    "Unification & Imperialism": ["Zollverein","Otto von Bismarck","Realpolitik","Reich","German Unification","Kulturkampf","Italian Unification","Nationalism in Europe","Failing Empires","Austria-Hungary","New Imperialism","White Man's Burden","Direct Rule","Indirect Rule","Berlin Conference","King Leopold II"],
-    "WWI": ["Causes of WWI (MAIN)","Entente","Militarism","Alsace and Lorraine","Mobilize","Neutrality","Stalemate","Schlieffen Plan","Allies (WWI)","Central Powers (WWI)","Trench Warfare","Zeppelin","Total War","Lusitania","Convoy","Conscription","Pandemic","Armistice","Treaty of Versailles","WWI Death Tolls"],
-    "Interwar & WWII": ["Collective Security","United Nations","Propaganda","Welfare State","Great Depression","FDR","New Deal","Dust Bowl","Jazz","Russian Revolution","Lenin","Stalin","Gulag","Soviet Union","Nazi","Hitler","Lebensraum","Nuremberg Laws","Kristallnacht","Holocaust","Benito Mussolini","Black Shirts","Fascism","Hideki Tojo","Japan (WWII)","Winston Churchill","Neville Chamberlain","European Theater","Blitzkrieg","Pacific Theater","Bataan Death March","Ending the War","A-Bomb","Repercussions of WWII"],
-    "Cold War": ["Cold War","Truman Doctrine","Containment","Marshall Plan","Berlin Airlift","Iron Curtain","Berlin Wall","NATO","Mutually Assured Destruction (MAD)","Military Industrial Complex","Discrimination","Segregation","Margaret Thatcher","GDP (Gross Domestic Product)","Fidel Castro","John F. Kennedy","Lyndon B. Johnson","Cuban Missile Crisis","Vietnam War","Tet Offensive","Domino Theory","Ho Chi Minh"],
+    "Enlightenment": [
+        "How does the Scientific Revolution lead to the Enlightenment?",
+        "Natural Laws","Social Contract","Hobbes","Locke","Philosophe","Voltaire","Montesquieu",
+        "Diderot","Rousseau","Mary Wollstonecraft","Adam Smith","Laissez Faire","Censorship"
+    ],
+    "American & French Revolution": [
+        "American Revolution","Thomas Jefferson","Declaration of Independence","French Revolution",
+        "Louis XVI","Jacques Necker","Marquis de Lafayette","Estates General","Ancien Régime",
+        "Deficit Spending","Tennis Court Oath","Storming of the Bastille","The Great Fear",
+        "How did France's social divisions contribute to the Revolution?",
+        "Reign of Terror","Maximilien Robespierre","Guillotine",
+        "Why was the Committee of Public Safety allowed to terrorize France?",
+        "Napoleon","How did the turmoil of France lead to Napoleon's rise to power?",
+        "Napoleonic Code","Reforms","Concert of Europe"
+    ],
+    "Industrial Revolution": [
+        "Entrepreneur","Capitalism","Capital","Industrial Revolution","Great Britain",
+        "Luddites","Urbanization","Standard of Living","Communism","Socialism","Tenements",
+        "Karl Marx","Textiles","Stocks","Germ Theory"
+    ],
+    "Unification & Imperialism": [
+        "Zollverein","Otto von Bismarck","Realpolitik","Reich","German Unification","Kulturkampf",
+        "Italian Unification","Nationalism in Europe","Failing Empires","Austria-Hungary",
+        "New Imperialism","White Man's Burden","Direct Rule","Indirect Rule",
+        "Berlin Conference","King Leopold II"
+    ],
+    "WWI": [
+        "Causes of WWI","Entente","Militarism","Alsace and Lorraine","Mobilize","Neutrality",
+        "Stalemate","Schlieffen Plan","Allies (WWI)","Central Powers (WWI)","Trench Warfare",
+        "Zeppelin","Total War","Lusitania","Convoy","Conscription","Pandemic","Armistice",
+        "Treaty of Versailles","WWI Death Tolls"
+    ],
+    "Interwar & WWII": [
+        "Collective Security","United Nations","Propaganda","Welfare State","Great Depression",
+        "FDR","New Deal","Dust Bowl","Jazz","Russian Revolution","Lenin","Stalin","Gulag",
+        "Soviet Union","Nazi","Hitler","Lebensraum","Nuremberg Laws","Kristallnacht","Holocaust",
+        "Benito Mussolini","Black Shirts","Fascism","Italy (WWII)","Hideki Tojo","Japan (WWII)",
+        "Winston Churchill","Neville Chamberlain","European Theater","Blitzkrieg","Pacific Theater",
+        "Bataan Death March","Ending the War","A-Bomb","Repercussions of WWII"
+    ],
+    "Cold War": [
+        "Cold War","Truman Doctrine","Containment","Marshall Plan","Berlin Airlift","Iron Curtain",
+        "Berlin Wall","NATO","Mutually Assured Destruction (MAD)","Military Industrial Complex",
+        "Discrimination","Segregation","Margaret Thatcher","GDP (Gross Domestic Product)",
+        "Fidel Castro","John F. Kennedy","Lyndon B. Johnson","Cuban Missile Crisis","Vietnam War",
+        "Tet Offensive","Domino Theory","Ho Chi Minh"
+    ],
 }
 
 def get_terms(unit_name):
     if UNITS[unit_name] is None:
         return ALL_TERMS
-    names = UNITS[unit_name]
+    names = set(UNITS[unit_name])
     return [t for t in ALL_TERMS if t["term"] in names]
-
-def init_state():
-    defaults = {
-        "mode": "menu",
-        "unit": "All Terms",
-        "deck": [],
-        "card_index": 0,
-        "show_def": False,
-        "quiz_deck": [],
-        "quiz_index": 0,
-        "quiz_correct": 0,
-        "quiz_answered": None,
-        "quiz_options": [],
-        "quiz_done": False,
-        "match_cards": [],
-        "match_selected": [],
-        "match_solved": [],
-        "match_done": False,
-    }
-    for k, v in defaults.items():
-        if k not in st.session_state:
-            st.session_state[k] = v
-
-init_state()
-
-# ── Header ─────────────────────────────────────────────────────────────────────
-st.markdown("""
-<div style="background:#1a1d27;border-bottom:1px solid #2a2d3e;padding:16px 24px;
-            display:flex;align-items:center;justify-content:space-between;
-            margin:-1rem -1rem 2rem -1rem;">
-  <div>
-    <span style="font-size:18px;font-weight:800;color:#6c8cff;letter-spacing:.04em">StudySet</span>
-    <span style="font-size:11px;background:#2a2d3e;color:#7b7f9e;padding:2px 10px;
-                 border-radius:99px;margin-left:10px;font-weight:500">2025 World History Final</span>
-  </div>
-  <span style="font-size:13px;color:#7b7f9e">""" + str(len(ALL_TERMS)) + """ total terms</span>
-</div>
-""", unsafe_allow_html=True)
-
-# ══════════════════════════════════════════════════════════════════════════════
-# MENU
-# ══════════════════════════════════════════════════════════════════════════════
-if st.session_state.mode == "menu":
-    st.markdown("## 📚 Final Exam Review")
-    st.markdown("<p class='muted'>Choose a unit and study mode to get started.</p>", unsafe_allow_html=True)
-
-    unit = st.selectbox("Unit", list(UNITS.keys()), index=list(UNITS.keys()).index(st.session_state.unit))
-    st.session_state.unit = unit
-    terms = get_terms(unit)
-    st.markdown(f"<p class='muted'>{len(terms)} terms in <strong style='color:#e8eaf6'>{unit}</strong></p>", unsafe_allow_html=True)
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown("<div class='card'><div style='font-size:28px'>🃏</div><div style='font-weight:700;margin:8px 0 4px'>Flashcards</div><div class='muted'>Flip through all terms</div></div>", unsafe_allow_html=True)
-        if st.button("Start Flashcards", use_container_width=True):
-            deck = terms.copy()
-            random.shuffle(deck)
-            st.session_state.deck = deck
-            st.session_state.card_index = 0
-            st.session_state.show_def = False
-            st.session_state.mode = "flashcard"
-            st.rerun()
-
-    with col2:
-        st.markdown("<div class='card'><div style='font-size:28px'>📝</div><div style='font-weight:700;margin:8px 0 4px'>Quiz</div><div class='muted'>Multiple choice on every term</div></div>", unsafe_allow_html=True)
-        if st.button("Start Quiz", use_container_width=True):
-            deck = terms.copy()
-            random.shuffle(deck)
-            st.session_state.quiz_deck = deck
-            st.session_state.quiz_index = 0
-            st.session_state.quiz_correct = 0
-            st.session_state.quiz_answered = None
-            st.session_state.quiz_done = False
-            # build first question options
-            correct = deck[0]
-            others = random.sample([t for t in ALL_TERMS if t["term"] != correct["term"]], 3)
-            opts = [correct] + others
-            random.shuffle(opts)
-            st.session_state.quiz_options = opts
-            st.session_state.mode = "quiz"
-            st.rerun()
-
-    with col3:
-        st.markdown("<div class='card'><div style='font-size:28px'>🔗</div><div style='font-weight:700;margin:8px 0 4px'>Match</div><div class='muted'>Match 6 terms to definitions</div></div>", unsafe_allow_html=True)
-        if st.button("Start Match", use_container_width=True):
-            sample = random.sample(terms, min(6, len(terms)))
-            cards = []
-            for i, t in enumerate(sample):
-                cards.append({"id": f"t{i}", "text": t["term"], "pair": i, "type": "term"})
-                cards.append({"id": f"d{i}", "text": t["def"],  "pair": i, "type": "def"})
-            random.shuffle(cards)
-            st.session_state.match_cards = cards
-            st.session_state.match_selected = []
-            st.session_state.match_solved = []
-            st.session_state.match_done = False
-            st.session_state.mode = "match"
-            st.rerun()
-
-# ══════════════════════════════════════════════════════════════════════════════
-# FLASHCARDS
-# ══════════════════════════════════════════════════════════════════════════════
-elif st.session_state.mode == "flashcard":
-    deck = st.session_state.deck
-    idx  = st.session_state.card_index
-    card = deck[idx]
-
-    col_back, col_prog = st.columns([1, 3])
-    with col_back:
-        if st.button("← Back to Menu"):
-            st.session_state.mode = "menu"; st.rerun()
-    with col_prog:
-        st.markdown(f"<p class='muted' style='text-align:right'>{idx+1} / {len(deck)}</p>", unsafe_allow_html=True)
-
-    st.progress((idx + 1) / len(deck))
-
-    if not st.session_state.show_def:
-        st.markdown(f"""
-        <div class='card' style='min-height:200px;display:flex;flex-direction:column;
-             align-items:center;justify-content:center'>
-          <div class='muted' style='font-size:11px;text-transform:uppercase;letter-spacing:.1em'>Term</div>
-          <div class='term' style='margin:12px 0'>{card['term']}</div>
-          <div class='muted'>Click below to see definition ↓</div>
-        </div>""", unsafe_allow_html=True)
-        if st.button("Show Definition", use_container_width=True):
-            st.session_state.show_def = True; st.rerun()
-    else:
-        st.markdown(f"""
-        <div class='card' style='min-height:200px;display:flex;flex-direction:column;
-             align-items:center;justify-content:center'>
-          <div class='muted' style='font-size:11px;text-transform:uppercase;letter-spacing:.1em'>Definition</div>
-          <div class='def' style='margin-top:12px'>{card['def']}</div>
-        </div>""", unsafe_allow_html=True)
-        if st.button("Hide Definition", use_container_width=True):
-            st.session_state.show_def = False; st.rerun()
-
-    c1, c2 = st.columns(2)
-    with c1:
-        if st.button("← Prev", disabled=(idx == 0), use_container_width=True):
-            st.session_state.card_index -= 1
-            st.session_state.show_def = False; st.rerun()
-    with c2:
-        label = "Next →" if idx < len(deck) - 1 else "Finish ✓"
-        if st.button(label, use_container_width=True):
-            if idx < len(deck) - 1:
-                st.session_state.card_index += 1
-                st.session_state.show_def = False; st.rerun()
-            else:
-                st.session_state.mode = "menu"; st.rerun()
-
-# ══════════════════════════════════════════════════════════════════════════════
-# QUIZ
-# ══════════════════════════════════════════════════════════════════════════════
-elif st.session_state.mode == "quiz":
-    deck = st.session_state.quiz_deck
-
-    col_back, col_prog = st.columns([1, 3])
-    with col_back:
-        if st.button("← Back to Menu"):
-            st.session_state.mode = "menu"; st.rerun()
-
-    if st.session_state.quiz_done:
-        correct = st.session_state.quiz_correct
-        total   = len(deck)
-        pct     = correct / total
-        emoji   = "🎉" if pct == 1 else "🙌" if pct >= 0.8 else "📚"
-        msg     = "Perfect score!" if pct == 1 else "Great job!" if pct >= 0.8 else "Keep studying!"
-        st.markdown(f"""
-        <div class='card'>
-          <div style='font-size:14px;color:#7b7f9e;margin-bottom:8px'>Quiz Complete!</div>
-          <div class='score-big'>{correct}/{total}</div>
-          <div style='font-size:18px;margin-top:8px'>{emoji} {msg}</div>
-        </div>""", unsafe_allow_html=True)
-        if st.button("Try Again", use_container_width=True):
-            random.shuffle(deck)
-            st.session_state.quiz_deck = deck
-            st.session_state.quiz_index = 0
-            st.session_state.quiz_correct = 0
-            st.session_state.quiz_answered = None
-            st.session_state.quiz_done = False
-            correct_t = deck[0]
-            others = random.sample([t for t in ALL_TERMS if t["term"] != correct_t["term"]], 3)
-            opts = [correct_t] + others; random.shuffle(opts)
-            st.session_state.quiz_options = opts
-            st.rerun()
-    else:
-        qi   = st.session_state.quiz_index
-        card = deck[qi]
-        opts = st.session_state.quiz_options
-
-        st.progress(qi / len(deck))
-        st.markdown(f"<p class='muted'>Question {qi+1} of {len(deck)} · Score: {st.session_state.quiz_correct}/{qi}</p>", unsafe_allow_html=True)
-        st.markdown(f"<div class='card'><div class='term'>{card['term']}</div></div>", unsafe_allow_html=True)
-
-        answered = st.session_state.quiz_answered
-        for opt in opts:
-            is_correct = opt["term"] == card["term"]
-            is_chosen  = answered == opt["term"]
-            label = opt["def"][:120] + "…" if len(opt["def"]) > 120 else opt["def"]
-
-            if answered is None:
-                if st.button(label, key=f"opt_{opt['term']}", use_container_width=True):
-                    st.session_state.quiz_answered = opt["term"]
-                    if is_correct:
-                        st.session_state.quiz_correct += 1
-                    st.rerun()
-            else:
-                if is_correct:
-                    st.success(f"✓ {label}")
-                elif is_chosen:
-                    st.error(f"✗ {label}")
-                else:
-                    st.markdown(f"<div style='padding:8px 12px;border:1px solid #2a2d3e;border-radius:8px;color:#7b7f9e;margin-bottom:8px;font-size:13px'>{label}</div>", unsafe_allow_html=True)
-
-        if answered is not None:
-            if st.button("Next Question →", use_container_width=True):
-                next_i = qi + 1
-                if next_i >= len(deck):
-                    st.session_state.quiz_done = True
-                else:
-                    st.session_state.quiz_index = next_i
-                    st.session_state.quiz_answered = None
-                    correct_t = deck[next_i]
-                    others = random.sample([t for t in ALL_TERMS if t["term"] != correct_t["term"]], 3)
-                    new_opts = [correct_t] + others; random.shuffle(new_opts)
-                    st.session_state.quiz_options = new_opts
-                st.rerun()
-
-# ══════════════════════════════════════════════════════════════════════════════
-# MATCH
-# ══════════════════════════════════════════════════════════════════════════════
-elif st.session_state.mode == "match":
-    col_back, col_prog = st.columns([1, 3])
-    with col_back:
-        if st.button("← Back to Menu"):
-            st.session_state.mode = "menu"; st.rerun()
-    with col_prog:
-        solved_count = len(st.session_state.match_solved) // 2
-        st.markdown(f"<p class='muted' style='text-align:right'>{solved_count} / 6 matched</p>", unsafe_allow_html=True)
-
-    if st.session_state.match_done:
-        st.markdown("<div class='card'><div style='font-size:32px'>🎉</div><div style='font-size:20px;font-weight:700;margin:8px 0'>All matched!</div></div>", unsafe_allow_html=True)
-        if st.button("Play Again", use_container_width=True):
-            terms = get_terms(st.session_state.unit)
-            sample = random.sample(terms, min(6, len(terms)))
-            cards = []
-            for i, t in enumerate(sample):
-                cards.append({"id": f"t{i}", "text": t["term"], "pair": i, "type": "term"})
-                cards.append({"id": f"d{i}", "text": t["def"],  "pair": i, "type": "def"})
-            random.shuffle(cards)
-            st.session_state.match_cards = cards
-            st.session_state.match_selected = []
-            st.session_state.match_solved = []
-            st.session_state.match_done = False
-            st.rerun()
-    else:
-        cards    = st.session_state.match_cards
-        selected = st.session_state.match_selected
-        solved   = st.session_state.match_solved
-
-        cols = st.columns(3)
-        for i, card in enumerate(cards):
-            with cols[i % 3]:
-                is_solved   = card["id"] in solved
-                is_selected = card["id"] in selected
-                text = card["text"][:80] + "…" if len(card["text"]) > 80 else card["text"]
-
-                if is_solved:
-                    st.markdown(f"<div class='match-solved'>{text}</div>", unsafe_allow_html=True)
-                else:
-                    border = "#6c8cff" if is_selected else "#2a2d3e"
-                    bg     = "#1d2240" if is_selected else "#1a1d27"
-                    st.markdown(f"""
-                    <div style='background:{bg};border:2px solid {border};border-radius:12px;
-                         padding:12px;min-height:80px;display:flex;align-items:center;
-                         justify-content:center;text-align:center;font-size:12px;
-                         margin-bottom:8px'>{text}</div>""", unsafe_allow_html=True)
-                    if st.button("Select", key=f"m_{card['id']}", use_container_width=True):
-                        sel = st.session_state.match_selected
-                        if card["id"] in sel:
-                            st.session_state.match_selected = [x for x in sel if x != card["id"]]
-                        else:
-                            new_sel = sel + [card["id"]]
-                            if len(new_sel) == 2:
-                                a = next(c for c in cards if c["id"] == new_sel[0])
-                                b = next(c for c in cards if c["id"] == new_sel[1])
-                                if a["pair"] == b["pair"] and a["type"] != b["type"]:
-                                    new_solved = st.session_state.match_solved + [a["id"], b["id"]]
-                                    st.session_state.match_solved = new_solved
-                                    st.session_state.match_selected = []
-                                    if len(new_solved) == len(cards):
-                                        st.session_state.match_done = True
-                                else:
-                                    st.session_state.match_selected = []
-                                    st.warning("Not a match — try again!")
-                            else:
-                                st.session_state.match_selected = new_sel
-                        st.rerun()
