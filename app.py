@@ -415,14 +415,14 @@ export default function StudyApp() {
             <div style={styles.modeCard} onClick={startQuiz}
               onMouseEnter={e => { e.currentTarget.style.borderColor = colors.accent2; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = ""; }}>
-              <div style={styles.modeIcon}>📝</div>
+              <div style={styles.modeIcon}>'📝'</div>
               <div style={styles.modeTitle}>Quiz</div>
               <div style={styles.modeDesc}>Multiple choice on every term</div>
             </div>
             <div style={styles.modeCard} onClick={startMatch}
               onMouseEnter={e => { e.currentTarget.style.borderColor = colors.accent3; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = ""; }}>
-              <div style={styles.modeIcon}>🔗</div>
+              <div style={styles.modeIcon}>'🔗'</div>
               <div style={styles.modeTitle}>Match</div>
               <div style={styles.modeDesc}>Match 6 terms to their definitions</div>
             </div>
