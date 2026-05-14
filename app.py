@@ -297,7 +297,7 @@ export default function StudyApp() {
     unitLabel: { fontSize: "12px", color: colors.muted, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" },
     unitBtns: { display: "flex", flexWrap: "wrap", gap: "8px" },
     unitBtn: (active) => ({ background: active ? colors.accent : colors.card, color: active ? "#fff" : colors.muted, border: `"1px solid ${active ? colors.accent : colors.border}", borderRadius: "8px", padding: "6px 14px", fontSize: "13px", cursor: "pointer", fontWeight: active ? "600" : "400", transition: "all 0.15s" }),
-    modeCard: { background: colors.card, border: `1px solid ${colors.border}`, borderRadius: "14px", padding: "24px", cursor: "pointer", transition: "border-color 0.15s, transform 0.15s" },
+    modeCard: { background: colors.card, border: `"1px solid ${colors.border}`", borderRadius: "14px", padding: "24px", cursor: "pointer", transition: "border-color 0.15s, transform 0.15s" },
     modeIcon: { fontSize: "28px", marginBottom: "10px" },
     modeTitle: { fontSize: "17px", fontWeight: "700", marginBottom: "4px" },
     modeDesc: { fontSize: "13px", color: colors.muted },
