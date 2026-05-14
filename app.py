@@ -341,7 +341,7 @@ export default function StudyApp() {
     quizOpts: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" },
     quizOpt: (state) => ({
       background: state === "correct" ? "#1a3a2a" : state === "wrong" ? "#3a1a1a" : "#13151f",
-      border: `2px solid ${state === "correct" ? colors.success : state === "wrong" ? colors.error : colors.border}`,
+      border: "2px solid ${state === "correct" ? colors.success : state === "wrong" ? colors.error : colors.border}",
       borderRadius: "10px",
       padding: "12px 16px",
       cursor: state ? "default" : "pointer",
@@ -352,12 +352,12 @@ export default function StudyApp() {
       transition: "all 0.15s",
       fontWeight: state ? "600" : "400",
     }),
-    scoreBox: { background: colors.card, border: `1px solid ${colors.border}`, borderRadius: "16px", padding: "32px", textAlign: "center" },
+    scoreBox: { background: colors.card, border: "px solid ${colors.border}", borderRadius: "16px", padding: "32px", textAlign: "center" },
     scoreNum: { fontSize: "48px", fontWeight: "800", color: colors.accent },
     matchGrid: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px" },
     matchCard: (state) => ({
       background: state === "solved" ? "#1a2e20" : state === "selected" ? "#1d2240" : state === "error" ? "#2e1a1a" : colors.card,
-      border: `2px solid ${state === "solved" ? colors.success : state === "selected" ? colors.accent : state === "error" ? colors.error : colors.border}`,
+      border: "2px solid ${state === "solved" ? colors.success : state === "selected" ? colors.accent : state === "error" ? colors.error : colors.border}",
       borderRadius: "12px",
       padding: "14px 12px",
       cursor: state === "solved" ? "default" : "pointer",
