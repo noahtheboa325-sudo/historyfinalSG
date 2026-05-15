@@ -287,6 +287,18 @@ def init_state():
         "match_selected": [],
         "match_solved": [],
         "match_done": False,
+        "write_deck": [],
+        "write_index": 0,
+        "write_answer": "",
+        "write_revealed": False,
+        "write_done": False,
+        "pt_deck": [],
+        "pt_index": 0,
+        "pt_correct": 0,
+        "pt_answered": None,
+        "pt_options": [],
+        "pt_done": False,
+        "pt_time_start": None,
     }
     for k, v in defaults.items():
         if k not in st.session_state:
@@ -342,7 +354,6 @@ if st.session_state.mode == "menu":
             st.session_state.quiz_correct = 0
             st.session_state.quiz_answered = None
             st.session_state.quiz_done = False
-            # build first question options
             correct = deck[0]
             others = random.sample([t for t in ALL_TERMS if t["term"] != correct["term"]], 3)
             opts = [correct] + others
@@ -365,6 +376,44 @@ if st.session_state.mode == "menu":
             st.session_state.match_solved = []
             st.session_state.match_done = False
             st.session_state.mode = "match"
+            st.rerun()
+
+    col4, col5 = st.columns(2)
+    with col4:
+        st.markdown("<div class='card'><div style='font-size:28px'>✍️</div><div style='font-weight:700;margin:8px 0 4px'>Writing</div><div class='muted'>Answer discussion & essay questions</div></div>", unsafe_allow_html=True)
+        write_terms = [t for t in terms if t["term"].startswith("DISCUSS:") or t["term"].startswith("ESSAY:")]
+        if not write_terms:
+            st.info("No writing questions in this unit. Try 'All Terms' or 'Unit 10'.")
+        else:
+            if st.button("Start Writing", use_container_width=True):
+                random.shuffle(write_terms)
+                st.session_state.write_deck = write_terms
+                st.session_state.write_index = 0
+                st.session_state.write_answer = ""
+                st.session_state.write_revealed = False
+                st.session_state.write_done = False
+                st.session_state.mode = "writing"
+                st.rerun()
+
+    with col5:
+        st.markdown("<div class='card'><div style='font-size:28px'>🎓</div><div style='font-weight:700;margin:8px 0 4px'>Practice Test</div><div class='muted'>Timed, all units, no going back</div></div>", unsafe_allow_html=True)
+        if st.button("Start Practice Test", use_container_width=True):
+            import time
+            pt_deck = [t for t in ALL_TERMS if not t["term"].startswith("DISCUSS:") and not t["term"].startswith("ESSAY:")]
+            random.shuffle(pt_deck)
+            pt_deck = pt_deck[:30]  # 30 question test
+            correct = pt_deck[0]
+            others = random.sample([t for t in ALL_TERMS if t["term"] != correct["term"] and not t["term"].startswith("DISCUSS:") and not t["term"].startswith("ESSAY:")], 3)
+            opts = [correct] + others
+            random.shuffle(opts)
+            st.session_state.pt_deck = pt_deck
+            st.session_state.pt_index = 0
+            st.session_state.pt_correct = 0
+            st.session_state.pt_answered = None
+            st.session_state.pt_options = opts
+            st.session_state.pt_done = False
+            st.session_state.pt_time_start = time.time()
+            st.session_state.mode = "practice_test"
             st.rerun()
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -566,3 +615,170 @@ elif st.session_state.mode == "match":
                             else:
                                 st.session_state.match_selected = new_sel
                         st.rerun()
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# WRITING
+# ══════════════════════════════════════════════════════════════════════════════
+elif st.session_state.mode == "writing":
+    deck = st.session_state.write_deck
+    idx  = st.session_state.write_index
+
+    col_back, col_prog = st.columns([1, 3])
+    with col_back:
+        if st.button("← Back to Menu"):
+            st.session_state.mode = "menu"; st.rerun()
+    with col_prog:
+        st.markdown(f"<p class='muted' style='text-align:right'>{idx+1} / {len(deck)}</p>", unsafe_allow_html=True)
+
+    st.progress((idx + 1) / len(deck))
+
+    if st.session_state.write_done:
+        st.markdown("<div class='card'><div style='font-size:32px'>✍️</div><div style='font-size:20px;font-weight:700;margin:8px 0'>All questions complete!</div><div class='muted'>Great practice for the essay portion.</div></div>", unsafe_allow_html=True)
+        if st.button("Start Over", use_container_width=True):
+            deck2 = st.session_state.write_deck.copy()
+            random.shuffle(deck2)
+            st.session_state.write_deck = deck2
+            st.session_state.write_index = 0
+            st.session_state.write_answer = ""
+            st.session_state.write_revealed = False
+            st.session_state.write_done = False
+            st.rerun()
+    else:
+        card = deck[idx]
+        # Strip prefix for display
+        question = card["term"].replace("DISCUSS: ", "").replace("ESSAY: ", "")
+        is_essay = card["term"].startswith("ESSAY:")
+
+        label = "📄 Essay Question" if is_essay else "💬 Discussion Question"
+        st.markdown(f"<div style='font-size:12px;color:#6c8cff;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px'>{label}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='card' style='text-align:left'><div style='font-size:18px;font-weight:700;color:#e8eaf6'>{question}</div></div>", unsafe_allow_html=True)
+
+        st.markdown("<p class='muted'>Write your answer below, then reveal the sample answer to compare.</p>", unsafe_allow_html=True)
+        user_answer = st.text_area("Your Answer", value=st.session_state.write_answer, height=180, placeholder="Type your answer here...", key=f"write_{idx}")
+        st.session_state.write_answer = user_answer
+
+        col_reveal, col_next = st.columns(2)
+        with col_reveal:
+            if st.button("Reveal Sample Answer 👁️", use_container_width=True):
+                st.session_state.write_revealed = True; st.rerun()
+        with col_next:
+            if st.button("Next Question →" if idx < len(deck) - 1 else "Finish ✓", use_container_width=True):
+                if idx < len(deck) - 1:
+                    st.session_state.write_index += 1
+                    st.session_state.write_answer = ""
+                    st.session_state.write_revealed = False
+                else:
+                    st.session_state.write_done = True
+                st.rerun()
+
+        if st.session_state.write_revealed:
+            st.markdown(f"""
+            <div style='background:#1a2e20;border:2px solid #4caf82;border-radius:12px;
+                        padding:20px;margin-top:16px'>
+              <div style='font-size:11px;color:#4caf82;font-weight:700;text-transform:uppercase;
+                          letter-spacing:.08em;margin-bottom:8px'>Sample Answer</div>
+              <div style='font-size:14px;line-height:1.7;color:#e8eaf6'>{card['def']}</div>
+            </div>""", unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PRACTICE TEST
+# ══════════════════════════════════════════════════════════════════════════════
+elif st.session_state.mode == "practice_test":
+    import time
+
+    col_back, col_timer = st.columns([1, 3])
+    with col_back:
+        if st.button("← Quit Test"):
+            st.session_state.mode = "menu"; st.rerun()
+
+    deck = st.session_state.pt_deck
+
+    if st.session_state.pt_done:
+        elapsed = int(time.time() - st.session_state.pt_time_start)
+        mins = elapsed // 60
+        secs = elapsed % 60
+        correct = st.session_state.pt_correct
+        total   = len(deck)
+        pct     = correct / total
+        emoji   = "🎉" if pct == 1 else "🙌" if pct >= 0.8 else "📚"
+        grade   = "A" if pct >= 0.9 else "B" if pct >= 0.8 else "C" if pct >= 0.7 else "D" if pct >= 0.6 else "F"
+        msg     = "Perfect score!" if pct == 1 else "Great job!" if pct >= 0.8 else "Keep studying!"
+        st.markdown(f"""
+        <div class='card'>
+          <div style='font-size:14px;color:#7b7f9e;margin-bottom:8px'>Practice Test Complete! {emoji}</div>
+          <div class='score-big'>{correct}/{total}</div>
+          <div style='font-size:32px;font-weight:800;color:#6c8cff;margin:8px 0'>Grade: {grade}</div>
+          <div style='font-size:16px;color:#7b7f9e;margin-bottom:4px'>{msg}</div>
+          <div style='font-size:13px;color:#7b7f9e'>⏱ Time: {mins}m {secs}s</div>
+        </div>""", unsafe_allow_html=True)
+        if st.button("Take Another Test", use_container_width=True):
+            pt_deck = [t for t in ALL_TERMS if not t["term"].startswith("DISCUSS:") and not t["term"].startswith("ESSAY:")]
+            random.shuffle(pt_deck)
+            pt_deck = pt_deck[:30]
+            correct_t = pt_deck[0]
+            others = random.sample([t for t in ALL_TERMS if t["term"] != correct_t["term"] and not t["term"].startswith("DISCUSS:") and not t["term"].startswith("ESSAY:")], 3)
+            opts = [correct_t] + others
+            random.shuffle(opts)
+            st.session_state.pt_deck = pt_deck
+            st.session_state.pt_index = 0
+            st.session_state.pt_correct = 0
+            st.session_state.pt_answered = None
+            st.session_state.pt_options = opts
+            st.session_state.pt_done = False
+            st.session_state.pt_time_start = time.time()
+            st.rerun()
+    else:
+        qi   = st.session_state.pt_index
+        card = deck[qi]
+        opts = st.session_state.pt_options
+        elapsed = int(time.time() - st.session_state.pt_time_start)
+        mins = elapsed // 60
+        secs = elapsed % 60
+
+        with col_timer:
+            st.markdown(f"<p class='muted' style='text-align:right'>⏱ {mins}m {secs}s &nbsp;|&nbsp; Question {qi+1} / {len(deck)} &nbsp;|&nbsp; Score: {st.session_state.pt_correct}/{qi}</p>", unsafe_allow_html=True)
+
+        st.progress(qi / len(deck))
+        st.markdown(f"""
+        <div style='background:#1a1d27;border:1px solid #2a2d3e;border-radius:12px;
+                    padding:16px 20px;margin-bottom:4px'>
+          <div style='font-size:11px;color:#ff6c8c;font-weight:700;text-transform:uppercase;
+                      letter-spacing:.08em;margin-bottom:6px'>🎓 Practice Test — No going back!</div>
+          <div style='font-size:18px;font-weight:700;color:#e8eaf6'>{card['term']}</div>
+        </div>""", unsafe_allow_html=True)
+
+        answered = st.session_state.pt_answered
+        for opt in opts:
+            is_correct = opt["term"] == card["term"]
+            is_chosen  = answered == opt["term"]
+            label = opt["def"]
+
+            if answered is None:
+                if st.button(label, key=f"pt_{opt['term']}", use_container_width=True):
+                    st.session_state.pt_answered = opt["term"]
+                    if is_correct:
+                        st.session_state.pt_correct += 1
+                    st.rerun()
+            else:
+                if is_correct:
+                    st.success(f"✓ {label}")
+                elif is_chosen:
+                    st.error(f"✗ {label}")
+                else:
+                    st.markdown(f"<div style='padding:8px 12px;border:1px solid #2a2d3e;border-radius:8px;color:#7b7f9e;margin-bottom:8px;font-size:13px'>{label}</div>", unsafe_allow_html=True)
+
+        if answered is not None:
+            if st.button("Next Question →" if qi < len(deck) - 1 else "See Results 🎓", use_container_width=True):
+                next_i = qi + 1
+                if next_i >= len(deck):
+                    st.session_state.pt_done = True
+                else:
+                    st.session_state.pt_index = next_i
+                    st.session_state.pt_answered = None
+                    correct_t = deck[next_i]
+                    others = random.sample([t for t in ALL_TERMS if t["term"] != correct_t["term"] and not t["term"].startswith("DISCUSS:") and not t["term"].startswith("ESSAY:")], 3)
+                    new_opts = [correct_t] + others
+                    random.shuffle(new_opts)
+                    st.session_state.pt_options = new_opts
+                st.rerun()
