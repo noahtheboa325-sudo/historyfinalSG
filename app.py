@@ -1,7 +1,6 @@
-import  {useState, useEffect}  from 'react';
+import { useState } from 'react';
 
 const allTerms = [
-  // Scientific Revolution & Enlightenment
   { term: "Scientific Revolution → Enlightenment", def: "The Scientific Revolution showed that reason and observation could uncover natural laws. This inspired Enlightenment thinkers to apply the same logical thinking to society, government, and human rights." },
   { term: "Natural Laws", def: "Rules believed to govern human society and behavior, just like laws govern nature. Enlightenment thinkers argued governments should be based on these universal principles." },
   { term: "Social Contract", def: "The idea that people give up some freedoms to a government in exchange for protection of their remaining rights. If the government breaks this agreement, people can revolt." },
@@ -16,13 +15,9 @@ const allTerms = [
   { term: "Adam Smith", def: "Scottish economist who wrote The Wealth of Nations. He argued that free markets, driven by self-interest and competition, would naturally produce prosperity." },
   { term: "Laissez Faire", def: "French for 'let it be.' The economic idea that government should not interfere in the economy — businesses should operate freely without regulation." },
   { term: "Censorship", def: "Government control over what ideas can be published or spoken. Enlightenment thinkers opposed censorship and fought for freedom of the press and speech." },
-
-  // American Revolution
   { term: "American Revolution", def: "The colonial revolt against British rule (1775–1783) inspired heavily by Enlightenment ideas. Colonists argued that Britain violated their natural rights and broke the social contract." },
   { term: "Thomas Jefferson", def: "Primary author of the Declaration of Independence. He drew on Locke's ideas about natural rights and the right to revolt against unjust governments." },
   { term: "Declaration of Independence", def: "Document written in 1776 that declared the American colonies independent from Britain. It stated that all men are created equal and have unalienable rights — life, liberty, and the pursuit of happiness." },
-
-  // French Revolution
   { term: "French Revolution", def: "A period of radical political change in France (1789–1799). It overthrew the monarchy, executed the king, and eventually led to Napoleon's rise to power." },
   { term: "Louis XVI", def: "King of France whose weak leadership and financial mismanagement helped trigger the French Revolution. He was executed by guillotine in 1793." },
   { term: "Jacques Necker", def: "France's finance minister who tried to solve the debt crisis but was dismissed by Louis XVI. His firing angered Parisians and contributed to the storming of the Bastille." },
@@ -38,14 +33,10 @@ const allTerms = [
   { term: "Maximilien Robespierre", def: "Leader of the Committee of Public Safety who directed the Reign of Terror. He believed extreme violence was necessary to protect the Revolution. Eventually he too was arrested and guillotined." },
   { term: "Guillotine", def: "A device used to behead people quickly, used extensively during the Reign of Terror. It became a symbol of Revolutionary violence." },
   { term: "Why the Terror Was Allowed", def: "France was threatened by foreign invasion and internal rebellion. The Committee convinced the public that harsh measures were necessary to save the Revolution — fear of enemies made people accept the violence." },
-
-  // Napoleon
   { term: "Napoleon", def: "French military general who rose to power after the French Revolution and became Emperor. He conquered much of Europe and spread Enlightenment legal ideas but also built an authoritarian empire." },
   { term: "Napoleon's Rise", def: "The chaos of the Revolution left France unstable and desperate for strong leadership. Napoleon's military victories made him a hero. He staged a coup in 1799 and took control of the government." },
   { term: "Napoleonic Code", def: "A unified legal code Napoleon established in France. It guaranteed equality before the law, property rights, and religious tolerance — but also restricted women's rights." },
   { term: "Concert of Europe", def: "An agreement among European powers after Napoleon's defeat to maintain the balance of power and prevent future revolutions or wars. It was established at the Congress of Vienna (1815)." },
-
-  // Industrial Revolution
   { term: "Entrepreneur", def: "A person who starts and runs a business, taking on financial risk for potential profit. Entrepreneurs were key figures driving the Industrial Revolution." },
   { term: "Capitalism", def: "An economic system where private individuals own businesses and compete in a free market. Profit motive drives production." },
   { term: "Capital", def: "Money or resources invested in a business to produce goods or services." },
@@ -61,8 +52,6 @@ const allTerms = [
   { term: "Textiles", def: "Cloth and fabric industry — one of the first industries to be industrialized in Britain. The spinning jenny and power loom revolutionized textile production." },
   { term: "Stocks", def: "Shares of ownership in a company. Selling stocks allowed businesses to raise large amounts of capital to fund industrial expansion." },
   { term: "Germ Theory", def: "The scientific discovery that diseases are caused by microorganisms (germs), not bad air. It revolutionized medicine and public health, partly a response to urban disease outbreaks." },
-
-  // German & Italian Unification
   { term: "Zollverein", def: "A Prussian-led customs union that eliminated trade barriers between German states. It economically united Germany before political unification." },
   { term: "Otto von Bismarck", def: "Prussian chancellor who unified Germany through 'blood and iron' — war and political strategy rather than idealism. He used Realpolitik to achieve his goals." },
   { term: "Realpolitik", def: "Politics based on practical goals rather than idealistic ones. Bismarck used Realpolitik — doing whatever was necessary to increase Prussian power, regardless of ethics." },
@@ -73,16 +62,12 @@ const allTerms = [
   { term: "Nationalism in Europe", def: "A strong belief that people with shared language, culture, or history should form their own nation-state. It was a major force driving unification in Germany and Italy and threatening multiethnic empires." },
   { term: "Failing Empires", def: "By the late 1800s, the Ottoman and Austro-Hungarian Empires were weakening due to nationalism — ethnic minorities wanted independence, destabilizing these multi-ethnic states." },
   { term: "Austria-Hungary", def: "A multiethnic empire in Central Europe that struggled to hold together as nationalist movements grew among its many ethnic groups (Slavs, Czechs, Hungarians, etc.)." },
-
-  // Imperialism
   { term: "New Imperialism", def: "The period from 1870–1914 when European powers rapidly colonized Africa and Asia for resources, markets, strategic advantage, and nationalist prestige." },
   { term: "White Man's Burden", def: "A poem by Rudyard Kipling used to justify imperialism — the racist idea that white Europeans had a duty to 'civilize' non-white peoples. It masked exploitation with paternalism." },
   { term: "Direct Rule", def: "A colonial system where the imperial power controls the colony directly, replacing local leaders with its own officials." },
   { term: "Indirect Rule", def: "A colonial system where the imperial power governs through existing local leaders, who enforce colonial policies but maintain some local customs." },
   { term: "Berlin Conference", def: "A meeting of European powers (1884–1885) to divide Africa among themselves. African nations had no representation. It formalized the 'Scramble for Africa.'" },
   { term: "King Leopold II", def: "Belgian king who personally colonized the Congo, exploiting it for rubber and ivory while terrorizing its people. His rule caused millions of deaths and became a symbol of colonial brutality." },
-
-  // WWI
   { term: "Causes of WWI (MAIN)", def: "Militarism, Alliance systems, Imperialism, and Nationalism. The assassination of Archduke Franz Ferdinand in 1914 was the spark that set off these underlying tensions." },
   { term: "Entente", def: "The alliance between France, Russia, and Britain (the Triple Entente). It became the core of the Allied Powers in WWI." },
   { term: "Militarism", def: "The glorification of military power and the aggressive buildup of armed forces. European nations competed to have the largest, most powerful militaries before WWI." },
@@ -103,8 +88,6 @@ const allTerms = [
   { term: "Armistice", def: "An agreement to stop fighting. WWI ended with an armistice on November 11, 1918 (11/11 at 11am), not a total German military defeat." },
   { term: "Treaty of Versailles", def: "The peace treaty ending WWI (1919). It blamed Germany for the war (War Guilt Clause), imposed massive reparations, stripped Germany of territory, and limited its military. Its harsh terms fueled resentment that helped Hitler rise." },
   { term: "WWI Death Tolls", def: "About 17 million people died in WWI (soldiers and civilians). The scale of death shocked the world and created a strong desire to prevent future wars." },
-
-  // Interwar Period
   { term: "Collective Security", def: "The idea that nations should work together to protect each other and prevent war — the principle behind the League of Nations and later the United Nations." },
   { term: "United Nations", def: "An international organization founded in 1945 to promote peace, cooperation, and human rights after WWII. It replaced the failed League of Nations." },
   { term: "Propaganda", def: "Information spread by governments or groups to promote a particular viewpoint or cause, often manipulating emotions. Widely used in both World Wars and the Cold War." },
@@ -114,15 +97,11 @@ const allTerms = [
   { term: "New Deal", def: "FDR's program of government relief, recovery, and reform to combat the Great Depression. It expanded the federal government's role in the economy and created jobs." },
   { term: "Dust Bowl", def: "A severe drought and dust storm crisis in the American Great Plains (1930s) that destroyed farms and displaced hundreds of thousands of families, worsening the Depression." },
   { term: "Jazz", def: "A uniquely American music genre born from African American culture, especially popular in the 1920s (Jazz Age). It represented cultural change, freedom, and the blending of African and European musical traditions." },
-
-  // Russian Revolution
   { term: "Russian Revolution", def: "In 1917, Russia had two revolutions: the first overthrew the Tsar; the second brought the Bolsheviks (communists) under Lenin to power, creating the Soviet Union." },
   { term: "Lenin", def: "Leader of the Bolshevik Revolution. He established the Soviet Union based on Marxist ideas, ended Russia's involvement in WWI, and created a one-party communist state." },
   { term: "Stalin", def: "Soviet leader after Lenin who ruled through terror. He industrialized the USSR through brutal Five-Year Plans, collectivized farms (causing famine), and purged millions of people." },
   { term: "Gulag", def: "Soviet forced labor camps where political prisoners and 'enemies of the state' were sent under Stalin. Millions died from harsh conditions." },
   { term: "Soviet Union", def: "The communist state created after the Russian Revolution, officially called the USSR. It was a superpower in the Cold War and collapsed in 1991." },
-
-  // Rise of Fascism & WWII
   { term: "Nazi", def: "Members of Adolf Hitler's National Socialist German Workers' Party. Nazi ideology was based on extreme nationalism, antisemitism, and authoritarianism." },
   { term: "Hitler", def: "Leader of Nazi Germany who rose to power in 1933. He started WWII by invading Poland and orchestrated the Holocaust — the genocide of six million Jews and millions of others." },
   { term: "Lebensraum", def: "German for 'living space.' Hitler's belief that Germany needed to expand eastward to acquire territory for the German people — used to justify aggression against Poland and the USSR." },
@@ -143,8 +122,6 @@ const allTerms = [
   { term: "Ending the War", def: "WWII ended in Europe on V-E Day (May 8, 1945) after Germany's surrender, and in the Pacific on V-J Day (August 15, 1945) after the US dropped atomic bombs on Hiroshima and Nagasaki." },
   { term: "A-Bomb", def: "The atomic bombs dropped on Hiroshima (Aug. 6, 1945) and Nagasaki (Aug. 9, 1945). Each killed tens of thousands instantly and ended WWII — but opened the nuclear age and debates about civilian targeting." },
   { term: "Repercussions of WWII", def: "WWII reshaped the world: the US and USSR emerged as superpowers, Europe was divided, the UN was created, Israel was founded, the Cold War began, and decolonization accelerated." },
-
-  // Cold War
   { term: "Cold War", def: "A state of geopolitical tension (1947–1991) between the US (capitalism/democracy) and the USSR (communism) that never escalated into direct military conflict but shaped global politics." },
   { term: "Truman Doctrine", def: "President Truman's 1947 policy pledging US support to countries threatened by communist takeover. It was first applied to Greece and Turkey." },
   { term: "Containment", def: "The US foreign policy strategy of preventing communism from spreading to new countries. Shaped US involvement in Korea, Vietnam, and elsewhere during the Cold War." },
@@ -190,7 +167,7 @@ function shuffle(arr) {
 }
 
 export default function StudyApp() {
-  const [mode, setMode] = useState("menu"); // menu | flashcard | quiz | match
+  const [mode, setMode] = useState("menu");
   const [unit, setUnit] = useState(0);
   const [deck, setDeck] = useState([]);
   const [cardIndex, setCardIndex] = useState(0);
@@ -286,7 +263,7 @@ export default function StudyApp() {
 
   const styles = {
     app: { minHeight: "100vh", background: colors.bg, color: colors.text, fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif", padding: "0" },
-    header: { background: colors.card, borderBottom: '1px solid ${colors.border}', padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" },
+    header: { background: colors.card, borderBottom: `1px solid ${colors.border}`, padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" },
     logo: { fontSize: "18px", fontWeight: "700", letterSpacing: "0.04em", color: colors.accent },
     tag: { fontSize: "11px", background: colors.border, color: colors.muted, padding: "2px 10px", borderRadius: "99px", marginLeft: "10px", fontWeight: "500" },
     body: { maxWidth: "780px", margin: "0 auto", padding: "32px 16px" },
@@ -296,15 +273,25 @@ export default function StudyApp() {
     unitSelect: { marginBottom: "24px" },
     unitLabel: { fontSize: "12px", color: colors.muted, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" },
     unitBtns: { display: "flex", flexWrap: "wrap", gap: "8px" },
-    unitBtn: (active) => ({background: active ? colors.accent : colors.card,color: active ? "#fff" : colors.muted,border: `1px solid ${active ? colors.accent : colors.border}`,borderRadius: "8px",padding: "6px 14px",fontSize: "13px", cursor: "pointer",fontWeight: active ? "600" : "400",transition: "all 0.15s",})
-    modeCard: { background: colors.card, border: `"1px solid ${colors.border}`", borderRadius: "14px", padding: "24px", cursor: "pointer", transition: "border-color 0.15s, transform 0.15s" },
+    unitBtn: (active) => ({
+      background: active ? colors.accent : colors.card,
+      color: active ? "#fff" : colors.muted,
+      border: `1px solid ${active ? colors.accent : colors.border}`,
+      borderRadius: "8px",
+      padding: "6px 14px",
+      fontSize: "13px",
+      cursor: "pointer",
+      fontWeight: active ? "600" : "400",
+      transition: "all 0.15s",
+    }),
+    modeCard: { background: colors.card, border: `1px solid ${colors.border}`, borderRadius: "14px", padding: "24px", cursor: "pointer", transition: "border-color 0.15s, transform 0.15s" },
     modeIcon: { fontSize: "28px", marginBottom: "10px" },
     modeTitle: { fontSize: "17px", fontWeight: "700", marginBottom: "4px" },
     modeDesc: { fontSize: "13px", color: colors.muted },
     btn: (variant = "primary") => ({
       background: variant === "primary" ? colors.accent : variant === "success" ? colors.success : colors.card,
       color: "#fff",
-      border: "1px solid ${variant === "primary" ? colors.accent : variant === "success" ? colors.success : colors.border}",
+      border: `1px solid ${variant === "primary" ? colors.accent : variant === "success" ? colors.success : colors.border}`,
       borderRadius: "10px",
       padding: "10px 22px",
       fontSize: "14px",
@@ -316,7 +303,7 @@ export default function StudyApp() {
     flashWrap: { perspective: "1000px", cursor: "pointer" },
     flashCard: (f) => ({
       background: colors.card,
-      border: "1px solid ${colors.border}",
+      border: `1px solid ${colors.border}`,
       borderRadius: "18px",
       padding: "40px 32px",
       minHeight: "220px",
@@ -330,18 +317,16 @@ export default function StudyApp() {
       transformStyle: "preserve-3d",
       position: "relative",
     }),
-    flashFront: { backfaceVisibility: "hidden", position: "absolute", width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "24px" },
     flashTerm: { fontSize: "22px", fontWeight: "700", color: colors.accent },
     flashHint: { fontSize: "12px", color: colors.muted, marginTop: "12px" },
-    flashBack: { backfaceVisibility: "hidden", transform: "rotateY(180deg)", position: "absolute", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px" },
     flashDef: { fontSize: "15px", lineHeight: "1.65", color: colors.text },
     navRow: { display: "flex", alignItems: "center", gap: "12px", marginTop: "20px", justifyContent: "center" },
-    quizCard: { background: colors.card, border: `"1px solid ${colors.border}", borderRadius: "16px", padding: "28px 24px", marginBottom: "20px" },
+    quizCard: { background: colors.card, border: `1px solid ${colors.border}`, borderRadius: "16px", padding: "28px 24px", marginBottom: "20px" },
     quizQ: { fontSize: "17px", fontWeight: "600", marginBottom: "20px", lineHeight: "1.5" },
     quizOpts: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" },
     quizOpt: (state) => ({
       background: state === "correct" ? "#1a3a2a" : state === "wrong" ? "#3a1a1a" : "#13151f",
-      border: "2px solid ${state === "correct" ? colors.success : state === "wrong" ? colors.error : colors.border}",
+      border: `2px solid ${state === "correct" ? colors.success : state === "wrong" ? colors.error : colors.border}`,
       borderRadius: "10px",
       padding: "12px 16px",
       cursor: state ? "default" : "pointer",
@@ -352,12 +337,12 @@ export default function StudyApp() {
       transition: "all 0.15s",
       fontWeight: state ? "600" : "400",
     }),
-    scoreBox: { background: colors.card, border: "px solid ${colors.border}", borderRadius: "16px", padding: "32px", textAlign: "center" },
+    scoreBox: { background: colors.card, border: `1px solid ${colors.border}`, borderRadius: "16px", padding: "32px", textAlign: "center" },
     scoreNum: { fontSize: "48px", fontWeight: "800", color: colors.accent },
     matchGrid: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px" },
     matchCard: (state) => ({
       background: state === "solved" ? "#1a2e20" : state === "selected" ? "#1d2240" : state === "error" ? "#2e1a1a" : colors.card,
-      border: "2px solid ${state === "solved" ? colors.success : state === "selected" ? colors.accent : state === "error" ? colors.error : colors.border}",
+      border: `2px solid ${state === "solved" ? colors.success : state === "selected" ? colors.accent : state === "error" ? colors.error : colors.border}`,
       borderRadius: "12px",
       padding: "14px 12px",
       cursor: state === "solved" ? "default" : "pointer",
@@ -390,7 +375,6 @@ export default function StudyApp() {
         <div style={styles.body}>
           <div style={styles.h1}>Final Exam Review</div>
           <div style={styles.sub}>Choose a unit and study mode to get started.</div>
-
           <div style={styles.unitSelect}>
             <div style={styles.unitLabel}>Unit</div>
             <div style={styles.unitBtns}>
@@ -399,30 +383,28 @@ export default function StudyApp() {
               ))}
             </div>
           </div>
-
           <div style={{ fontSize: "13px", color: colors.muted, marginBottom: "18px" }}>
             {termCount} terms in <strong style={{ color: colors.text }}>{UNITS[unit].label}</strong>
           </div>
-
           <div style={styles.grid2}>
             <div style={styles.modeCard} onClick={startFlashcard}
               onMouseEnter={e => { e.currentTarget.style.borderColor = colors.accent; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = ""; }}>
-              <div style={styles.modeIcon}>'🃏'</div>
+              <div style={styles.modeIcon}>🃏</div>
               <div style={styles.modeTitle}>Flashcards</div>
               <div style={styles.modeDesc}>Flip through all terms and definitions</div>
             </div>
             <div style={styles.modeCard} onClick={startQuiz}
               onMouseEnter={e => { e.currentTarget.style.borderColor = colors.accent2; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = ""; }}>
-              <div style={styles.modeIcon}>'📝'</div>
+              <div style={styles.modeIcon}>📝</div>
               <div style={styles.modeTitle}>Quiz</div>
               <div style={styles.modeDesc}>Multiple choice on every term</div>
             </div>
             <div style={styles.modeCard} onClick={startMatch}
               onMouseEnter={e => { e.currentTarget.style.borderColor = colors.accent3; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = colors.border; e.currentTarget.style.transform = ""; }}>
-              <div style={styles.modeIcon}>'🔗'</div>
+              <div style={styles.modeIcon}>🔗</div>
               <div style={styles.modeTitle}>Match</div>
               <div style={styles.modeDesc}>Match 6 terms to their definitions</div>
             </div>
@@ -437,7 +419,7 @@ export default function StudyApp() {
     return (
       <div style={styles.app}>
         <div style={styles.header}>
-          <button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button>
+          <button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button>
           <span style={styles.progress}>{cardIndex + 1} / {deck.length}</span>
         </div>
         <div style={styles.body}>
@@ -451,7 +433,7 @@ export default function StudyApp() {
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%" }}>
                   <div style={{ fontSize: "11px", color: colors.muted, textTransform: "uppercase", letterSpacing: "0.1em" }}>Term</div>
                   <div style={styles.flashTerm}>{card.term}</div>
-                  <div style={styles.flashHint}>Tap to see definition '→'</div>
+                  <div style={styles.flashHint}>Tap to see definition →</div>
                 </div>
               )}
               {flipped && (
@@ -463,7 +445,7 @@ export default function StudyApp() {
             </div>
           </div>
           <div style={styles.navRow}>
-            <button style={styles.btn("ghost")} onClick={() => { setCardIndex(Math.max(0, cardIndex - 1)); setFlipped(false); }} disabled={cardIndex === 0}>'←' Prev</button>
+            <button style={styles.btn("ghost")} onClick={() => { setCardIndex(Math.max(0, cardIndex - 1)); setFlipped(false); }} disabled={cardIndex === 0}>← Prev</button>
             <button style={styles.btn("primary")} onClick={() => { if (cardIndex < deck.length - 1) { setCardIndex(cardIndex + 1); setFlipped(false); } else setMode("menu"); }}>
               {cardIndex < deck.length - 1 ? "Next →" : "Finish ✓"}
             </button>
@@ -479,7 +461,7 @@ export default function StudyApp() {
   if (mode === "quiz") {
     if (quizDone) return (
       <div style={styles.app}>
-        <div style={styles.header}><button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button></div>
+        <div style={styles.header}><button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button></div>
         <div style={styles.body}>
           <div style={styles.scoreBox}>
             <div style={{ fontSize: "14px", color: colors.muted, marginBottom: "8px" }}>Quiz Complete!</div>
@@ -496,7 +478,7 @@ export default function StudyApp() {
     return (
       <div style={styles.app}>
         <div style={styles.header}>
-          <button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button>
+          <button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button>
           <span style={styles.progress}>{quizQ.idx + 1} / {deck.length}</span>
         </div>
         <div style={styles.body}>
@@ -536,14 +518,14 @@ export default function StudyApp() {
     return (
       <div style={styles.app}>
         <div style={styles.header}>
-          <button style={styles.backBtn} onClick={() => setMode("menu")}>'←' Back</button>
+          <button style={styles.backBtn} onClick={() => setMode("menu")}>← Back</button>
           <span style={styles.progress}>{matchSolved.length / 2} / 6 matched</span>
         </div>
         <div style={styles.body}>
           <div style={{ marginBottom: "16px", fontWeight: "700" }}>Match the Terms</div>
           {matchDone ? (
             <div style={styles.scoreBox}>
-              <div style={{ fontSize: "28px", marginBottom: "8px" }}>'🎉'</div>
+              <div style={{ fontSize: "28px", marginBottom: "8px" }}>🎉</div>
               <div style={{ fontSize: "20px", fontWeight: "700", marginBottom: "16px" }}>All matched!</div>
               <button style={styles.btn("primary")} onClick={startMatch}>Play Again</button>
             </div>
