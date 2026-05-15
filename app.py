@@ -242,12 +242,14 @@ ALL_TERMS = [
 
 UNITS = {
     "All Terms": None,
-    "Enlightenment": ["Scientific Revolution → Enlightenment","Natural Laws","Social Contract","Hobbes","Locke","Philosophe","Voltaire","Montesquieu","Diderot","Rousseau","Mary Wollstonecraft","Adam Smith","Laissez Faire","Censorship"],
-    "American & French Revolution": ["American Revolution","Thomas Jefferson","Declaration of Independence","French Revolution","Louis XVI","Jacques Necker","Marquis de Lafayette","Estates General","Ancien Régime","Deficit Spending","Tennis Court Oath","Storming of the Bastille","The Great Fear","Social Divisions & the Revolution","Reign of Terror","Maximilien Robespierre","Guillotine","Why the Terror Was Allowed","Napoleon","Napoleon's Rise","Napoleonic Code","Concert of Europe"],
-    "Industrial Revolution": ["Entrepreneur","Capitalism","Capital","Industrial Revolution","Great Britain (Industrial Rev.)","Luddites","Urbanization","Standard of Living","Communism","Socialism","Tenements","Karl Marx","Textiles","Stocks","Germ Theory"],
-    "Unification & Imperialism": ["Zollverein","Otto von Bismarck","Realpolitik","Reich","German Unification","Kulturkampf","Italian Unification","Nationalism in Europe","Failing Empires","Austria-Hungary","New Imperialism","White Man's Burden","Direct Rule","Indirect Rule","Berlin Conference","King Leopold II"],
-    "WWI": ["Causes of WWI (MAIN)","Entente","Militarism","Alsace and Lorraine","Mobilize","Neutrality","Stalemate","Schlieffen Plan","Allies (WWI)","Central Powers (WWI)","Trench Warfare","Zeppelin","Total War","Lusitania","Convoy","Conscription","Pandemic","Armistice","Treaty of Versailles","WWI Death Tolls"],
-    "Interwar & WWII": ["Collective Security","United Nations","Propaganda","Welfare State","Great Depression","FDR","New Deal","Dust Bowl","Jazz","Russian Revolution","Lenin","Stalin","Gulag","Soviet Union","Nazi","Hitler","Lebensraum","Nuremberg Laws","Kristallnacht","Holocaust","Benito Mussolini","Black Shirts","Fascism","Hideki Tojo","Japan (WWII)","Winston Churchill","Neville Chamberlain","European Theater","Blitzkrieg","Pacific Theater","Bataan Death March","Ending the War","A-Bomb","Repercussions of WWII"],
+    "Unit 10 - Enlightenment and Revolution": ["Scientific Revolution → Enlightenment","Natural Laws","Social Contract","Hobbes","Locke","Philosophe","Voltaire","Montesquieu","Diderot","Rousseau","Mary Wollstonecraft","Adam Smith","Laissez Faire","Censorship","American Revolution","Thomas Jefferson","Declaration of Independence","French Revolution","Louis XVI","Jacques Necker","Marquis de Lafayette","Estates General","Ancien Régime","Deficit Spending","Tennis Court Oath","Storming of the Bastille","The Great Fear","Social Divisions & the Revolution","Reign of Terror","Maximilien Robespierre","Guillotine","Why the Terror Was Allowed","Napoleon","Napoleon's Rise","Napoleonic Code","Concert of Europe"],
+    "Unit 11 - Industrial Revolution": ["Entrepreneur","Capitalism","Capital","Industrial Revolution","Great Britain (Industrial Rev.)","Luddites","Urbanization","Standard of Living","Communism","Socialism","Tenements","Karl Marx","Textiles","Stocks","Germ Theory"],
+    "European Nationalism": ["Zollverein","Otto von Bismarck","Realpolitik","Reich","German Unification","Kulturkampf","Italian Unification","Nationalism in Europe","Failing Empires","Austria-Hungary"],
+    "New Imperialism": ["New Imperialism","White Man's Burden","Direct Rule","Indirect Rule","Berlin Conference","King Leopold II"],
+    "World War I": ["Causes of WWI (MAIN)","Entente","Militarism","Alsace and Lorraine","Mobilize","Neutrality","Stalemate","Schlieffen Plan","Allies (WWI)","Central Powers (WWI)","Trench Warfare","Zeppelin","Total War","Lusitania","Convoy","Conscription","Pandemic","Armistice","Treaty of Versailles","WWI Death Tolls"],
+    "Russian Revolution": ["Russian Revolution","Lenin","Stalin","Gulag","Soviet Union"],
+    "Rise of Totalitarianism": ["Collective Security","United Nations","Propaganda","Welfare State","Great Depression","FDR","New Deal","Dust Bowl","Jazz","Nazi","Hitler","Lebensraum","Nuremberg Laws","Kristallnacht","Holocaust","Benito Mussolini","Black Shirts","Fascism"],
+    "WWII": ["Hideki Tojo","Japan (WWII)","Winston Churchill","Neville Chamberlain","European Theater","Blitzkrieg","Pacific Theater","Bataan Death March","Ending the War","A-Bomb","Repercussions of WWII"],
     "Cold War": ["Cold War","Truman Doctrine","Containment","Marshall Plan","Berlin Airlift","Iron Curtain","Berlin Wall","NATO","Mutually Assured Destruction (MAD)","Military Industrial Complex","Discrimination","Segregation","Margaret Thatcher","GDP (Gross Domestic Product)","Fidel Castro","John F. Kennedy","Lyndon B. Johnson","Cuban Missile Crisis","Vietnam War","Tet Offensive","Domino Theory","Ho Chi Minh"],
 }
 
@@ -453,7 +455,7 @@ elif st.session_state.mode == "quiz":
         for opt in opts:
             is_correct = opt["term"] == card["term"]
             is_chosen  = answered == opt["term"]
-            label = opt["def"][:120] + "…" if len(opt["def"]) > 120 else opt["def"]
+            label = opt["def"]
 
             if answered is None:
                 if st.button(label, key=f"opt_{opt['term']}", use_container_width=True):
@@ -520,7 +522,7 @@ elif st.session_state.mode == "match":
             with cols[i % 3]:
                 is_solved   = card["id"] in solved
                 is_selected = card["id"] in selected
-                text = card["text"][:80] + "…" if len(card["text"]) > 80 else card["text"]
+                text = card["text"]
 
                 if is_solved:
                     st.markdown(f"<div class='match-solved'>{text}</div>", unsafe_allow_html=True)
